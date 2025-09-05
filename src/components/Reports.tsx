@@ -19,7 +19,7 @@ import {
   Search,
   ChevronRight
 } from 'lucide-react';
-import SalesSummary from './reports/SalesSummary';
+import SalesSummarySection from './reports/SalesSummary';
 
 interface ReportsProps {
   onBack: () => void;
@@ -284,9 +284,9 @@ export default function Reports({ onBack }: ReportsProps) {
     switch (activeSection) {
       case 'sales-summary':
         return (
-          <SalesSummary 
-            data={reportData} 
-            loading={loading} 
+          <SalesSummarySection
+            data={reportData}
+            loading={loading}
             dateRange={dateRange}
             granularity={granularity}
           />
@@ -455,8 +455,6 @@ export default function Reports({ onBack }: ReportsProps) {
     </div>
   );
 }
-
-import SalesSummary from './reports/SalesSummary';
 
 // Placeholder components สำหรับหน้าอื่นๆ (จะถูกแทนที่ด้วย component จริงในอนาคต)
 const SalesByItemSection = ({ data, loading }: { data: any; loading: boolean }) => (
