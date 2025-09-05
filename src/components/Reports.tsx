@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Separator } from './ui/separator';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { 
   ArrowLeft, 
   BarChart3, 
@@ -19,7 +19,7 @@ import {
   Search,
   ChevronRight
 } from 'lucide-react';
-import SalesSummary from './reports/SalesSummary';
+import SalesSummarySection from './reports/SalesSummary';
 
 interface ReportsProps {
   onBack: () => void;
@@ -284,9 +284,9 @@ export default function Reports({ onBack }: ReportsProps) {
     switch (activeSection) {
       case 'sales-summary':
         return (
-          <SalesSummary 
-            data={reportData} 
-            loading={loading} 
+          <SalesSummarySection
+            data={reportData}
+            loading={loading}
             dateRange={dateRange}
             granularity={granularity}
           />
@@ -455,8 +455,6 @@ export default function Reports({ onBack }: ReportsProps) {
     </div>
   );
 }
-
-import SalesSummary from './reports/SalesSummary';
 
 // Placeholder components สำหรับหน้าอื่นๆ (จะถูกแทนที่ด้วย component จริงในอนาคต)
 const SalesByItemSection = ({ data, loading }: { data: any; loading: boolean }) => (
