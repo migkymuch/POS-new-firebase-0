@@ -14,7 +14,7 @@ interface SalesSummaryProps {
   granularity: string;
 }
 
-export default function SalesSummary({ data, loading, dateRange, granularity }: SalesSummaryProps) {
+export default function SalesSummarySection({ data, loading, dateRange, granularity }: SalesSummaryProps) {
   const [chartType, setChartType] = React.useState<'bar' | 'line'>('bar');
   const [searchQuery, setSearchQuery] = React.useState('');
   const [showColumns, setShowColumns] = React.useState({
